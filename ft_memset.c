@@ -32,10 +32,10 @@ int	main()
 {
 	char	s[] = "Yo no soy marinero";
 
-	printf("%p\n", ft_memset(s + 2, '.', 3));
+	printf("%p\n", ft_memset(s + 2, '.', 5));
 	printf("%s\n", s);
 
-	printf("%p\n", memset(s + 2, '.', 3));
+	printf("%p\n", memset(s, '.', 3));
 	printf("%s\n", s);
 	return (0);
 }

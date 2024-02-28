@@ -28,7 +28,8 @@ char	*ft_strnstr(const char *str, const char *str_to_find, size_t len)
 	while (i < len && s1[i] != '\0')
 	{
 		k = 0;
-		while (s1[i + k] != '\0' && s1[i + k] == s_find[k])
+		while (s1[i + k] != '\0' && s_find[k] != '\0'
+			&& s1[i + k] == s_find[k] && (i + k) < len)
 		{
 			if (s_find[k + 1] == '\0')
 				return (&s1[i]);
@@ -36,16 +37,16 @@ char	*ft_strnstr(const char *str, const char *str_to_find, size_t len)
 		}
 		i++;
 	}
-	return (0);
+	return (NULL);
 }
-
+/*
 int	main()
 {
 	char	str[] = "Foo Bar Baz";
-	char	str_to_find[] = "lol";
+	char	str_to_find[] = "Foo";
 
-	printf("Result ft_strnstr: %s\n", ft_strnstr(str, str_to_find, 11));
-	printf("Result of strnstr: %d\n", strnstr(str, str_to_find, 11));
+	printf("Result ft_strnstr: %s\n", ft_strnstr(str, str_to_find, 1));
+	printf("Result of strnstr: %s\n", strnstr(str, str_to_find, 1));
 	return (0);
 }
-
+*/

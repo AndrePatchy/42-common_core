@@ -11,9 +11,11 @@
 /* ************************************************************************** */
 
 // Opens a void pointer, dynamicly allocates memory. If overflow or error (?)
-// return NULL. If all good, fills the array with 0s and return the filled 
+// return NULL. If all good, fills the string with 0s and return the filled 
 // pointer. 
-
+// Calloc does not catch garbage in memory, because is filled with 0s. 
+// Contigous slot of memory with 0s (char)
+#include <stdlib.h>
 #include "libft.h"
 
 void	*ft_calloc(size_t nmemb, size_t size)

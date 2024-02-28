@@ -19,12 +19,13 @@ char	*ft_strrchr(const char *s, int c)
 	size_t	i;
 	char	*r;
 
+	c = (unsigned char) c;
 	p = (char *)s;
 	i = 0;
 	r = NULL;
-	while (p[i] != '\0')
+	while (p[i])
 	{
-		if (p[i] == (unsigned char)c)
+		if (p[i] == c)
 			r = &p[i];
 		i++;
 	}

@@ -16,6 +16,7 @@ char	*ft_strdup(const char *s)
 {
 	char	*s_copy;
 	size_t	i;
+
 	s_copy = (char *)malloc(ft_strlen(s) + 1);
 	if (!s_copy)
 		return (NULL);
@@ -31,7 +32,7 @@ char	*ft_strdup(const char *s)
 /*
 int	main()
 {
-	char	*s1 = "newcnwkcnwkecnekwnfckelwfnmckewlmfkewnmfklenwfklewnfknewklfn wefn eklfnckwnf cklwenfklwenfewjkfnweinfewiofh5723904572903759432849032849203402934u9032u0239hd3idonwfewfmneiwmfekncmklsncsdjcnvjbckv<dsjkvcndklscmslkdfewjur9032u49032849302849023840932092fncewmcimew";
+	char	*s1 = "mslkdfewjur9032u49032849302849023840932092fncewmcimew";
 	char	*s_copy = ft_strdup(s1);
 
 	printf("Result of ft_strdup: %s\n", s_copy);

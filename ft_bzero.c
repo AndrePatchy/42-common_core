@@ -1,4 +1,4 @@
-* ************************************************************************** */
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
@@ -15,14 +15,14 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t	i;
-	char	*str;
+	unsigned char	*str;
+	size_t			i;
 
-	str = (char *)s;
+	str = s;
 	i = 0;
 	while (i < n)
 	{
-		str[i] = '\0';
+		str[i] = 0;
 		i++;
 	}
 }
@@ -33,11 +33,11 @@ int	main()
 	char	str1[] = "Damn, son!";
 
 	printf("Before the ft_bzero: %s\n", str);
-	ft_bzero(str, 2);
-	printf("After the ft_bzero: %s\n", &str[2]);
+	ft_bzero(str, 1);
+	printf("After the ft_bzero: %s\n", str);
 	
-	bzero(str1, 2);
-	printf("The bzero function: %s\n", &str1[2]);
+	bzero(str1, 1);
+	printf("The bzero function: %s\n", str1);
 	return (0);
 }
 */

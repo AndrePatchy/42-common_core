@@ -1,47 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: patchy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/23 12:14:26 by patchy            #+#    #+#             */
-/*   Updated: 2023/09/23 16:13:43 by patchy           ###   ########.fr       */
+/*   Created: 2023/09/19 15:11:40 by patchy            #+#    #+#             */
+/*   Updated: 2023/10/06 12:33:22 by patchy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
-char	*ft_strchr(const char *s, int c)
+void	ft_putstr_fd(char *s, int fd)
 {
-	int		i;
-	char	*p;
-
-	c = (unsigned char) c;
-	p = (char *)s;
-	i = 0;
-	while (p[i])
-	{
-		if (p[i] == c)
-			return (&p[i]);
-		i++;
-	}
-	if (c == 0)
-		return (&p[i]);
-	return (NULL);
+	if(!s)
+		return ;
+	write(fd, s, ft_strlen(s));
 }
-/*
-int	main()
-{
-	char	str[] = "teste";
-	int	c = '\0';
-
-	printf("ft_strchr:\n");
-	printf("%p\n\n", ft_strchr(str, c));
-
-	printf("strchr:\n");
-	printf("%p\n", strchr(str, c));
-	return (0);
-}
-*/

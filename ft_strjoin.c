@@ -1,47 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: patchy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/23 12:14:26 by patchy            #+#    #+#             */
-/*   Updated: 2023/09/23 16:13:43 by patchy           ###   ########.fr       */
+/*   Created: 2023/09/19 15:11:40 by patchy            #+#    #+#             */
+/*   Updated: 2023/10/06 12:33:22 by patchy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strjoin(const char *s1, const char *s2)
 {
-	int		i;
-	char	*p;
+	size_t	i;
+	size_t	k;
+	char	*str;
 
-	c = (unsigned char) c;
-	p = (char *)s;
+	str = (char *)malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
+	if (!str)
+		return (NULL);
 	i = 0;
-	while (p[i])
+	while (s1[i] != '\0')
 	{
-		if (p[i] == c)
-			return (&p[i]);
+		str[i] = s1[i];
 		i++;
 	}
-	if (c == 0)
-		return (&p[i]);
-	return (NULL);
+	k = 0;
+	while (s2[k] != '\0')
+	{
+		str[i] = s2[k];
+		i++;
+		k++;
+	}
+	str[i] = '\0';
+	return (str);
 }
 /*
-int	main()
+int	main(void)
 {
-	char	str[] = "teste";
-	int	c = '\0';
+	char	s1[] = "Eu sou o";
+	char	s2[] = "Andre";
 
-	printf("ft_strchr:\n");
-	printf("%p\n\n", ft_strchr(str, c));
-
-	printf("strchr:\n");
-	printf("%p\n", strchr(str, c));
+	printf("%s\n", ft_strjoin(s1, s2));
 	return (0);
 }
 */

@@ -11,37 +11,24 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
-char	*ft_strchr(const char *s, int c)
+void	ft_putnbr_fd(int n, int fd)
 {
-	int		i;
-	char	*p;
-
-	c = (unsigned char) c;
-	p = (char *)s;
-	i = 0;
-	while (p[i])
+	if (n < 0)
 	{
-		if (p[i] == c)
-			return (&p[i]);
-		i++;
+		if (n == -2147483648)
+		{
+			ft_putstr_fd("-2147483648", fd);
+			return ;
+		}
+		ft_putchar_fd('-', fd);
+		n = -n;
 	}
-	if (c == 0)
-		return (&p[i]);
-	return (NULL);
+	if (n / 10)
+	{
+		ft_putnbr_fd(n / 10, fd);
+		ft_putnbr_fd(n % 10, fd);
+	}
+	else
+		ft_putchar_fd('0' + n, fd);
 }
-/*
-int	main()
-{
-	char	str[] = "teste";
-	int	c = '\0';
-
-	printf("ft_strchr:\n");
-	printf("%p\n\n", ft_strchr(str, c));
-
-	printf("strchr:\n");
-	printf("%p\n", strchr(str, c));
-	return (0);
-}
-*/

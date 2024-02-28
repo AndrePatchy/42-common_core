@@ -11,37 +11,39 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 {
-	int		i;
-	char	*p;
+	char	*str;
+	size_t	len;
+	size_t	i;
 
-	c = (unsigned char) c;
-	p = (char *)s;
 	i = 0;
-	while (p[i])
+	if(!s)
+		return (ft_strdup(""));
+	len = ft_strlen(s);
+	str = (char *)malloc((len + 1) * sizeof(char));
+	if(!str)
+		return (NULL);
+	while (i < len)
 	{
-		if (p[i] == c)
-			return (&p[i]);
-		i++;
+		str[i] = (*f)(i, s[i]);
+		++i;
 	}
-	if (c == 0)
-		return (&p[i]);
-	return (NULL);
+	str[i] = 0;
+	return (str);
 }
 /*
-int	main()
+char	ft_anything(unsigned int i, char s)
 {
-	char	str[] = "teste";
-	int	c = '\0';
-
-	printf("ft_strchr:\n");
-	printf("%p\n\n", ft_strchr(str, c));
-
-	printf("strchr:\n");
-	printf("%p\n", strchr(str, c));
-	return (0);
+	return (s + i);
 }
-*/
+
+int	main(void)
+{
+	char	*str;
+
+	str = "tenho sooooono";
+	printf("%s\n", ft_strmapi(str, ft_anything));
+	return (0);
+}*/

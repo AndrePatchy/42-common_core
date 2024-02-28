@@ -11,37 +11,31 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
-char	*ft_strchr(const char *s, int c)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	int		i;
-	char	*p;
+	unsigned int	i;
 
-	c = (unsigned char) c;
-	p = (char *)s;
 	i = 0;
-	while (p[i])
+	if (!s)
+		return ;
+	while (s[i])
 	{
-		if (p[i] == c)
-			return (&p[i]);
-		i++;
+		(*f)(i, (s + i));
+		++i;
 	}
-	if (c == 0)
-		return (&p[i]);
-	return (NULL);
 }
 /*
-int	main()
+void	ft_adding(unsigned int i, char *str)
 {
-	char	str[] = "teste";
-	int	c = '\0';
+	*str += i;
+}
 
-	printf("ft_strchr:\n");
-	printf("%p\n\n", ft_strchr(str, c));
-
-	printf("strchr:\n");
-	printf("%p\n", strchr(str, c));
+int	main(void)
+{
+	char	str[] = "Yellow";
+	ft_striteri(str, ft_adding);
+	printf("%s\n", str);
 	return (0);
 }
 */

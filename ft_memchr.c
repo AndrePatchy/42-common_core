@@ -15,26 +15,25 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t	i;
-	char	*p;
+	unsigned char	*p;
 
+	p = (unsigned char *)s;
 	c = (unsigned char)c;
-	p = (char *)s;
-	i = 0;
-	while (p[i] != '\0' && i < n)
+	while (n && *p != c)
 	{
-		if (p[i] == c)
-			return (&p[i]);
-		i++;
+		++p;
+		--n;
 	}
-	printf("%c \n\n", p[i]);
-	return (NULL);
+	if (n)
+		return ((void *)p);
+	else
+		return (NULL);
 }
 /*
 int	main()
 {
-	char	s1[] = "Heyllo";
-	char	s2[] = "Hewllo";
+	char	s1[] = "Heillo";
+	char	s2[] = "Heillo";
 
 	printf("Result of ft_memchr: %p \n", ft_memchr(s1, 'i', 10));
 	printf("Result of memchr: %p \n", memchr(s2, 'i', 10));

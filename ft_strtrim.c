@@ -1,47 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: patchy <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/23 12:14:26 by patchy            #+#    #+#             */
-/*   Updated: 2023/09/23 16:13:43 by patchy           ###   ########.fr       */
+/*   Created: 2023/09/19 15:11:40 by patchy            #+#    #+#             */
+/*   Updated: 2023/10/06 12:33:22 by patchy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strtrim(const char *s1, const char *set)
 {
-	int		i;
-	char	*p;
+	size_t	s;
+	size_t	e;
+	char	*str;
 
-	c = (unsigned char) c;
-	p = (char *)s;
-	i = 0;
-	while (p[i])
-	{
-		if (p[i] == c)
-			return (&p[i]);
-		i++;
-	}
-	if (c == 0)
-		return (&p[i]);
-	return (NULL);
+	if (!s1)
+		return (NULL);
+	if (!set)
+		return (ft_strdup(s1));
+	e = ft_strlen(s1) - 1;
+	s = 0;
+	while (s1[s] && ft_strchr(set, s1[s]))
+		++s;
+	while (s1[e] && ft_strchr(set, s1[e]))
+		--e;
+	str = ft_substr(s1, s, e - s + 1);
+	return (str);
 }
 /*
-int	main()
+int	main(void)
 {
-	char	str[] = "teste";
-	int	c = '\0';
+	char	str[] = "Da me \0 trim";
+	char	set[] = "\0";
 
-	printf("ft_strchr:\n");
-	printf("%p\n\n", ft_strchr(str, c));
-
-	printf("strchr:\n");
-	printf("%p\n", strchr(str, c));
+	printf("%s\n", ft_strtrim(str, set));
 	return (0);
-}
-*/
+}*/

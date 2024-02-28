@@ -18,32 +18,31 @@ int	ft_atoi(const char *nptr)
 	int	i;
 	int	r;
 	int	sig;
-	char	*s;
 
-	s = (char *)nptr;
 	sig = 1;
 	i = 0;
 	r = 0;
-	while ((s[i] >= 9 && s[i] <= 13) || s[i] == 32)
+	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == 32)
 		i++;
-	while (s[i] == '-' || s[i] == '+')
+	if (nptr[i] == '-' || nptr[i] == '+')
 	{
-		if (s[i] == '-')
-			sig = sig * -1;
+		if (nptr[i] == '-')
+			sig = -1;
 		i++;
 	}
-	while (s[i] >= 48 && s[i] <= 57)
+	while (nptr[i] >= 48 && nptr[i] <= 57)
 	{
-		r = (r * 10) + s[i] - 48;
+		r = r * 10 + nptr[i] - 48;
 		i++;
 	}
 	return (r * sig);
 }
 /*
-int	main(int argc, char *argv[])
+int	main()
 {
-	if (argc == 2)
-	printf("%i\n", ft_atoi(argv[1]));
+	char	str[] = "OLHA CARALHO";
+	printf("%i\n", ft_atoi(str));
+	printf("%i", atoi(str));
 	return (0);
 }
 */

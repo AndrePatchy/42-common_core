@@ -11,37 +11,9 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
-char	*ft_strchr(const char *s, int c)
+void	ft_putendl_fd(char *s, int fd)
 {
-	int		i;
-	char	*p;
-
-	c = (unsigned char) c;
-	p = (char *)s;
-	i = 0;
-	while (p[i])
-	{
-		if (p[i] == c)
-			return (&p[i]);
-		i++;
-	}
-	if (c == 0)
-		return (&p[i]);
-	return (NULL);
+	ft_putstr_fd(s, fd);
+	write(fd, "\n", 1);
 }
-/*
-int	main()
-{
-	char	str[] = "teste";
-	int	c = '\0';
-
-	printf("ft_strchr:\n");
-	printf("%p\n\n", ft_strchr(str, c));
-
-	printf("strchr:\n");
-	printf("%p\n", strchr(str, c));
-	return (0);
-}
-*/
