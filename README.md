@@ -9,4 +9,5 @@ This repository contains code developed at 42 Lisbon Common Core, from 01/09/202
 ## Projects
 
 ### [Libft](https://github.com/AndrePatchy/42-common_core/tree/main/Libft)
+Libft involves learning how the standard functions of C programming work by writing them from scratch and creating a personal library. This project is vital as the library will be used in future assignments at 42. I did all the functions including the bonus. You can find the subject [here](https://github.com/AndrePatchy/42-common_core/blob/main/Libft/Subject/en_subject_libft.pdf). 
 In every project, I write down a few notes for mental model purposes. You can find the notes that helped me with the Libft project [here](https://github.com/AndrePatchy/42-common_core/blob/main/Libft/Support.txt).
