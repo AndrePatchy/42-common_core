@@ -7,6 +7,6 @@ This repository contains code developed at 42 Lisbon Common Core, from 01/09/202
 
 <h1>Projects</h1>
 
-<h1>
+<h5>
   <a href="https://github.com/AndrePatchy/42-common_core/tree/main/Libft" target="_blank">Libft</a>
-</h1>
+</h5>
