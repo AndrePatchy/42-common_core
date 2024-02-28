@@ -10,6 +10,5 @@ This repository contains code developed at 42 Lisbon Common Core, from 01/09/202
 
 | Project      | Language | Grade | Evaluation |
 |--------------|----------|-------|------------|
-| [Libft](https://github.com/AndrePatchy/Libft) | C | A | Passed     |
-| [ProjectName](https://github.com/yourusername/ProjectName) | Language | Grade | Evaluation |
-| [AnotherProject](https://github.com/yourusername/AnotherProject) | Language | Grade | Evaluation |
+| [Libft](https://github.com/AndrePatchy/Libft) | C | For evaluation |     |
+| [Get_next_line](https://github.com/AndrePatchy/Get_next_line) | C | Ongoing |  |
