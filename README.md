@@ -3,7 +3,7 @@
 Source of the banner: [jotavare](https://github.com/jotavare).
 # 42 Common Core
 
-The 42 Common Core was developed in Paris in 2013 and is continually evaluated and developed. Students progress through the program by completing projects and earning points to level up, making the learning experience feel like a game.
+The 42 Common Core was developed in Paris in 2013 and is continually evaluated and developed. Students progress through the program by completing projects and earning experience to level up, making the learning experience feel like a game.
 
 This repository contains code developed at 42 Lisbon Common Core, from 08/04/24 to present day.
 
