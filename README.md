@@ -14,4 +14,4 @@ This repository contains code developed at 42 Lisbon Common Core, from 08/04/24 
 | [Libft](https://github.com/AndrePatchy/Libft) | C | 125/125 |
 | [Get_next_line](https://github.com/AndrePatchy/Get_next_line) | C | 100/125 |
 | [ft_printf]() | C | 100/125 |
-| [Born2beRoot()] | Shell scripting | 100/125 | 
+| [Born2beRoot]() | Shell scripting | 100/125 | 
